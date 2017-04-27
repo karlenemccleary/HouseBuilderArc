@@ -8,8 +8,11 @@ namespace ArchFinal
 {
     class LocationFactory
     {
-        public Location getLocation(string str) {
-            
+        public LocationIF getLocation(string str) {
+            str = "ArchFinal." + str;
+            Type type = Type.GetType(str, true);
+            object o = Activator.CreateInstance(type);
+            return (LocationIF)o;
         }
     }
 }
