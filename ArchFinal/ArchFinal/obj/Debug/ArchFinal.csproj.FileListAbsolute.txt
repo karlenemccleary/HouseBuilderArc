@@ -1,2 +1,13 @@
 P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
 \\psbdfilesrvr.psu-erie.bd.psu.edu\student\KNC5206\private\desktop\ArchFinal\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\bin\Debug\ArchFinal.pdb
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csprojResolveAssemblyReference.cache
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Properties.Resources.resources
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csproj.GenerateResource.Cache
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Builder.resources
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Editor.resources
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Home.resources

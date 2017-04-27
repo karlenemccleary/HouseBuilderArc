@@ -1,6 +1,6 @@
 ﻿namespace ArchFinal
 {
-    partial class Form1
+    partial class Builder
     {
         /// <summary>
         /// Required designer variable.
