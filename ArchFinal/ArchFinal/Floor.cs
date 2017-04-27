@@ -10,6 +10,7 @@ namespace ArchFinal
     {
         public Floor() : base(1800)
         {
+
         }
     }
 }
