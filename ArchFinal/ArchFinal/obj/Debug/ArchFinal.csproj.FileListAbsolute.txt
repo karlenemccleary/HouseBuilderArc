@@ -14,3 +14,6 @@ P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\ArchFinal\ArchFinal\obj
 P:\Private\Archeticture\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
 P:\Private\Archeticture\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
 P:\Private\Archeticture\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
