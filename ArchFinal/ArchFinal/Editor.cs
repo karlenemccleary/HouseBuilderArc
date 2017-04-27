@@ -16,5 +16,10 @@ namespace ArchFinal
         {
             InitializeComponent();
         }
+
+        private void Editor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -17,6 +17,19 @@ namespace ArchFinal
             InitializeComponent();
         }
 
+        private void Builder_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

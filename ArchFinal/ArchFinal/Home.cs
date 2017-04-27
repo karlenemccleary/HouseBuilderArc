@@ -19,10 +19,21 @@ namespace ArchFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Builder frm = new Builder();
+            frm.Show();
+            frm.Activate();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            Editor frm = new Editor();
+            frm.Show();
+            frm.Activate();
+            this.Hide();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
         {
 
         }
