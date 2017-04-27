@@ -1,0 +1,2 @@
+P:\Private\Archeticture\FinalProject\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+\\psbdfilesrvr.psu-erie.bd.psu.edu\student\KNC5206\private\desktop\ArchFinal\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
