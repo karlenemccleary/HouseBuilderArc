@@ -13,15 +13,10 @@ namespace ArchFinal
 {
     public partial class Builder : Form
     {
-<<<<<<< HEAD
+       
         LocationFactory f;
         HouseIF house;
         LocationIF loc;
-        public Builder()
-        {
-            InitializeComponent();
-            f = new LocationFactory();
-=======
         public Bitmap bitmap1;
         public Bitmap bitmap2;
         public bool pressedFirst;
@@ -29,6 +24,7 @@ namespace ArchFinal
         public Builder()
         {
             InitializeComponent();
+            f = new LocationFactory();
             //set the bitmap for drawing to panel size
             bitmap1 = new Bitmap(panel.Width, panel.Height);
             bitmap2 = new Bitmap(panel.Width, panel.Height);
@@ -39,7 +35,6 @@ namespace ArchFinal
             typeof(Panel).InvokeMember("DoubleBuffered",
                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
                null, panel, new object[] { true });
->>>>>>> d30abfd42ea273821a5cbef811d69c6f0c6b7cf7
         }
 
         private void Builder_FormClosed(object sender, FormClosedEventArgs e)
