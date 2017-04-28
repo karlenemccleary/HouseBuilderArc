@@ -31,6 +31,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkButton = new System.Windows.Forms.Button();
+            this.paintButton = new System.Windows.Forms.RadioButton();
+            this.windowButton = new System.Windows.Forms.RadioButton();
+            this.doorButton = new System.Windows.Forms.RadioButton();
+            this.floorButton = new System.Windows.Forms.RadioButton();
+            this.sidingButton = new System.Windows.Forms.RadioButton();
+            this.foundationButton = new System.Windows.Forms.RadioButton();
+            this.roofButton = new System.Windows.Forms.RadioButton();
             this.button9 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -47,14 +55,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.roofButton = new System.Windows.Forms.RadioButton();
-            this.foundationButton = new System.Windows.Forms.RadioButton();
-            this.sidingButton = new System.Windows.Forms.RadioButton();
-            this.floorButton = new System.Windows.Forms.RadioButton();
-            this.doorButton = new System.Windows.Forms.RadioButton();
-            this.windowButton = new System.Windows.Forms.RadioButton();
-            this.paintButton = new System.Windows.Forms.RadioButton();
-            this.checkButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "New House";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -105,6 +106,93 @@
             this.panel2.Size = new System.Drawing.Size(200, 487);
             this.panel2.TabIndex = 0;
             // 
+            // checkButton
+            // 
+            this.checkButton.Location = new System.Drawing.Point(17, 289);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(75, 23);
+            this.checkButton.TabIndex = 24;
+            this.checkButton.Text = "Check";
+            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
+            // 
+            // paintButton
+            // 
+            this.paintButton.AutoSize = true;
+            this.paintButton.Location = new System.Drawing.Point(15, 160);
+            this.paintButton.Name = "paintButton";
+            this.paintButton.Size = new System.Drawing.Size(49, 17);
+            this.paintButton.TabIndex = 23;
+            this.paintButton.TabStop = true;
+            this.paintButton.Text = "Paint";
+            this.paintButton.UseVisualStyleBackColor = true;
+            // 
+            // windowButton
+            // 
+            this.windowButton.AutoSize = true;
+            this.windowButton.Location = new System.Drawing.Point(15, 137);
+            this.windowButton.Name = "windowButton";
+            this.windowButton.Size = new System.Drawing.Size(64, 17);
+            this.windowButton.TabIndex = 22;
+            this.windowButton.TabStop = true;
+            this.windowButton.Text = "Window";
+            this.windowButton.UseVisualStyleBackColor = true;
+            // 
+            // doorButton
+            // 
+            this.doorButton.AutoSize = true;
+            this.doorButton.Location = new System.Drawing.Point(17, 114);
+            this.doorButton.Name = "doorButton";
+            this.doorButton.Size = new System.Drawing.Size(48, 17);
+            this.doorButton.TabIndex = 21;
+            this.doorButton.TabStop = true;
+            this.doorButton.Text = "Door";
+            this.doorButton.UseVisualStyleBackColor = true;
+            // 
+            // floorButton
+            // 
+            this.floorButton.AutoSize = true;
+            this.floorButton.Location = new System.Drawing.Point(17, 91);
+            this.floorButton.Name = "floorButton";
+            this.floorButton.Size = new System.Drawing.Size(48, 17);
+            this.floorButton.TabIndex = 20;
+            this.floorButton.TabStop = true;
+            this.floorButton.Text = "Floor";
+            this.floorButton.UseVisualStyleBackColor = true;
+            // 
+            // sidingButton
+            // 
+            this.sidingButton.AutoSize = true;
+            this.sidingButton.Location = new System.Drawing.Point(17, 68);
+            this.sidingButton.Name = "sidingButton";
+            this.sidingButton.Size = new System.Drawing.Size(54, 17);
+            this.sidingButton.TabIndex = 19;
+            this.sidingButton.TabStop = true;
+            this.sidingButton.Text = "Siding";
+            this.sidingButton.UseVisualStyleBackColor = true;
+            // 
+            // foundationButton
+            // 
+            this.foundationButton.AutoSize = true;
+            this.foundationButton.Location = new System.Drawing.Point(17, 45);
+            this.foundationButton.Name = "foundationButton";
+            this.foundationButton.Size = new System.Drawing.Size(78, 17);
+            this.foundationButton.TabIndex = 18;
+            this.foundationButton.TabStop = true;
+            this.foundationButton.Text = "Foundation";
+            this.foundationButton.UseVisualStyleBackColor = true;
+            // 
+            // roofButton
+            // 
+            this.roofButton.AutoSize = true;
+            this.roofButton.Location = new System.Drawing.Point(17, 22);
+            this.roofButton.Name = "roofButton";
+            this.roofButton.Size = new System.Drawing.Size(48, 17);
+            this.roofButton.TabIndex = 17;
+            this.roofButton.TabStop = true;
+            this.roofButton.Text = "Roof";
+            this.roofButton.UseVisualStyleBackColor = true;
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(15, 377);
@@ -113,6 +201,7 @@
             this.button9.TabIndex = 16;
             this.button9.Text = "Confirm Location";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // label14
             // 
@@ -246,92 +335,6 @@
             this.label2.Size = new System.Drawing.Size(24, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "test";
-            // 
-            // roofButton
-            // 
-            this.roofButton.AutoSize = true;
-            this.roofButton.Location = new System.Drawing.Point(17, 22);
-            this.roofButton.Name = "roofButton";
-            this.roofButton.Size = new System.Drawing.Size(48, 17);
-            this.roofButton.TabIndex = 17;
-            this.roofButton.TabStop = true;
-            this.roofButton.Text = "Roof";
-            this.roofButton.UseVisualStyleBackColor = true;
-            // 
-            // foundationButton
-            // 
-            this.foundationButton.AutoSize = true;
-            this.foundationButton.Location = new System.Drawing.Point(17, 45);
-            this.foundationButton.Name = "foundationButton";
-            this.foundationButton.Size = new System.Drawing.Size(78, 17);
-            this.foundationButton.TabIndex = 18;
-            this.foundationButton.TabStop = true;
-            this.foundationButton.Text = "Foundation";
-            this.foundationButton.UseVisualStyleBackColor = true;
-            // 
-            // sidingButton
-            // 
-            this.sidingButton.AutoSize = true;
-            this.sidingButton.Location = new System.Drawing.Point(17, 68);
-            this.sidingButton.Name = "sidingButton";
-            this.sidingButton.Size = new System.Drawing.Size(54, 17);
-            this.sidingButton.TabIndex = 19;
-            this.sidingButton.TabStop = true;
-            this.sidingButton.Text = "Siding";
-            this.sidingButton.UseVisualStyleBackColor = true;
-            // 
-            // floorButton
-            // 
-            this.floorButton.AutoSize = true;
-            this.floorButton.Location = new System.Drawing.Point(17, 91);
-            this.floorButton.Name = "floorButton";
-            this.floorButton.Size = new System.Drawing.Size(48, 17);
-            this.floorButton.TabIndex = 20;
-            this.floorButton.TabStop = true;
-            this.floorButton.Text = "Floor";
-            this.floorButton.UseVisualStyleBackColor = true;
-            // 
-            // doorButton
-            // 
-            this.doorButton.AutoSize = true;
-            this.doorButton.Location = new System.Drawing.Point(17, 114);
-            this.doorButton.Name = "doorButton";
-            this.doorButton.Size = new System.Drawing.Size(48, 17);
-            this.doorButton.TabIndex = 21;
-            this.doorButton.TabStop = true;
-            this.doorButton.Text = "Door";
-            this.doorButton.UseVisualStyleBackColor = true;
-            // 
-            // windowButton
-            // 
-            this.windowButton.AutoSize = true;
-            this.windowButton.Location = new System.Drawing.Point(15, 137);
-            this.windowButton.Name = "windowButton";
-            this.windowButton.Size = new System.Drawing.Size(64, 17);
-            this.windowButton.TabIndex = 22;
-            this.windowButton.TabStop = true;
-            this.windowButton.Text = "Window";
-            this.windowButton.UseVisualStyleBackColor = true;
-            // 
-            // paintButton
-            // 
-            this.paintButton.AutoSize = true;
-            this.paintButton.Location = new System.Drawing.Point(15, 160);
-            this.paintButton.Name = "paintButton";
-            this.paintButton.Size = new System.Drawing.Size(49, 17);
-            this.paintButton.TabIndex = 23;
-            this.paintButton.TabStop = true;
-            this.paintButton.Text = "Paint";
-            this.paintButton.UseVisualStyleBackColor = true;
-            // 
-            // checkButton
-            // 
-            this.checkButton.Location = new System.Drawing.Point(17, 289);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(75, 23);
-            this.checkButton.TabIndex = 24;
-            this.checkButton.Text = "Check";
-            this.checkButton.UseVisualStyleBackColor = true;
             // 
             // Builder
             // 

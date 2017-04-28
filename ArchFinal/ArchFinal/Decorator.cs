@@ -10,8 +10,14 @@ namespace ArchFinal
     {
         HouseIF house;
         LocationIF location;
-        public Decorator() {
-            
+        public Decorator(HouseIF h, LocationIF l) {
+            house = h;
+            location = l;
+        }
+
+        public double getPrice()
+        {
+            return house.getPrice() + location.getPrice();
         }
     }
 }
