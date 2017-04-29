@@ -119,7 +119,7 @@
             // paintButton
             // 
             this.paintButton.AutoSize = true;
-            this.paintButton.Location = new System.Drawing.Point(15, 160);
+            this.paintButton.Location = new System.Drawing.Point(17, 160);
             this.paintButton.Name = "paintButton";
             this.paintButton.Size = new System.Drawing.Size(49, 17);
             this.paintButton.TabIndex = 23;
@@ -130,7 +130,7 @@
             // windowButton
             // 
             this.windowButton.AutoSize = true;
-            this.windowButton.Location = new System.Drawing.Point(15, 137);
+            this.windowButton.Location = new System.Drawing.Point(17, 137);
             this.windowButton.Name = "windowButton";
             this.windowButton.Size = new System.Drawing.Size(64, 17);
             this.windowButton.TabIndex = 22;

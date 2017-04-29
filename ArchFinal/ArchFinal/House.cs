@@ -11,9 +11,18 @@ namespace ArchFinal
         private double price;
         private HousePartsIF part;
 
-        House()
+        public House()
         {
-            price = part.getPrice();
+            price = 0;
+        }
+
+        public void setPrice() {
+            price += part.getPrice();
+        }
+
+        public void setPart(HousePartsIF part)
+        {
+            this.part = part;
         }
 
         public double getPrice()
