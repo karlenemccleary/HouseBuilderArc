@@ -93,5 +93,34 @@ namespace ArchFinal
             }
             label2.Text = house.getPrice().ToString();
         }
+
+        private void panel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (sidingButton.Checked)
+            {
+                Bitmap temp = new Bitmap(bitmap1);
+                //set ups graphics to draw
+                using (Graphics g = Graphics.FromImage(temp))
+                {
+
+                }
+            }
+        }
+
+        private void panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (pressedFirst)
+            {
+
+            }
+        }
+
+        private void panel_MouseUp(object sender, MouseEventArgs e)
+        {
+            //copy the second bitmap back to original
+            bitmap1 = new Bitmap(bitmap2);
+            //no longer dragging mouse
+            pressedFirst = false;
+        }
     }
 }

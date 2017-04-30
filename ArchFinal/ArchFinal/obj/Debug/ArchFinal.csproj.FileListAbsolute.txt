@@ -25,3 +25,6 @@ P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\Arch
 P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Properties.Resources.resources
 P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csproj.GenerateResource.Cache
 P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csprojResolveAssemblyReference.cache
+C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
+C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
