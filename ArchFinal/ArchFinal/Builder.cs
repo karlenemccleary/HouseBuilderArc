@@ -15,7 +15,7 @@ namespace ArchFinal
     {
        
         LocationFactory f;
-        HouseIF house;
+        House house;
         LocationIF loc;
         public Bitmap bitmap1;
         public Bitmap bitmap2;
@@ -27,15 +27,15 @@ namespace ArchFinal
             f = new LocationFactory();
             //house = new House();
             //set the bitmap for drawing to panel size
-            bitmap1 = new Bitmap(panel1.Width, panel1.Height);
-            bitmap2 = new Bitmap(panel1.Width, panel1.Height);
+            bitmap1 = new Bitmap(panel.Width, panel.Height);
+            bitmap2 = new Bitmap(panel.Width, panel.Height);
             //checks to make sure mouse is pressed for dragging
             pressedFirst = false;
 
             //stops flickering
             typeof(Panel).InvokeMember("DoubleBuffered",
                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
-               null, panel1, new object[] { true });
+               null, panel, new object[] { true });
         }
 
         private void Builder_FormClosed(object sender, FormClosedEventArgs e)
@@ -43,63 +43,7 @@ namespace ArchFinal
             Application.Exit();
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (sidingButton.Checked)
-            {
-                Bitmap temp = new Bitmap(bitmap1);
-                //set ups graphics to draw
-                using (Graphics g = Graphics.FromImage(temp))
-                {
-                    
-                }
-            }
-        }
 
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
-        {
-            //copy the second bitmap back to original
-            bitmap1 = new Bitmap(bitmap2);
-            //no longer dragging mouse
-            pressedFirst = false;
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if(pressedFirst)
-            {
-                
-            }
-        }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            /*if(sidingButton.Checked)
-            {
-                house.setPart(new Siding());
-            }
-            else if (roofButton.Checked)
-            {
-                part = new Roof();
-            }
-            else if (paintButton.Checked)
-            {
-               //part = new Paint();
-            }
-            else if (doorButton.Checked)
-            {
-                part = new Door();
-            }
-            else if (windowButton.Checked)
-            {
-                //part = new Window();
-            }
-            else if (floorButton.Checked)
-            {
-                part = new Floor();
-            }*/
-
-        }
 
         private void checkButton_Click(object sender, EventArgs e)
         {
@@ -111,8 +55,8 @@ namespace ArchFinal
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Decorator d = new Decorator(house, loc);
-            label2.Text = d.getPrice().ToString();
+            house = new Decorator(house, loc);
+            label2.Text = house.getPrice().ToString();
 
         }
 
@@ -121,5 +65,33 @@ namespace ArchFinal
             house = new House();
         }
 
+        private void panel_Click(object sender, EventArgs e)
+        {
+            if (sidingButton.Checked)
+            {
+                house.addPart(new Siding());
+            }
+            else if (roofButton.Checked)
+            {
+                house.addPart(new Roof());
+            }
+            else if (paintButton.Checked)
+            {
+                //house.addPart(new Paint());
+            }
+            else if (doorButton.Checked)
+            {
+                house.addPart(new Door());
+            }
+            else if (windowButton.Checked)
+            {
+                //house.addPart(new Window());
+            }
+            else if (floorButton.Checked)
+            {
+                house.addPart(new Floor());
+            }
+            label2.Text = house.getPrice().ToString();
+        }
     }
 }

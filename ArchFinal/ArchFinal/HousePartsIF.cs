@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ArchFinal
 {
-    interface HousePartsIF : HouseIF
+    interface HousePartsIF
     {
+        double getPrice();
     }
 }

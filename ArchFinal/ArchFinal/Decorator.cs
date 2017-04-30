@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace ArchFinal
 {
-    class Decorator
+    class Decorator : House
     {
-        HouseIF house;
+        House house;
         LocationIF location;
-        public Decorator(HouseIF h, LocationIF l) {
+        public Decorator(House h, LocationIF l) : base(h.getPrice() + l.getPrice()) {
             house = h;
             location = l;
         }
 
-        public double getPrice()
+        public override double getPrice()
         {
             return house.getPrice() + location.getPrice();
         }
+
     }
 }

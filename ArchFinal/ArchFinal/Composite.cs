@@ -8,9 +8,10 @@ namespace ArchFinal
 {
     class Composite : AbsHouseParts
     {
+        List<PaintAndWindow> pw;
         public Composite(double price) : base(price)
         {
-
+            pw = new List<PaintAndWindow>();
         }
     }
 }

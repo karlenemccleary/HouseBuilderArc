@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArchFinal
 {
-    interface ObserableIF
+    interface ObservableIF
     {
         void addObserver();
         void removeObserver();

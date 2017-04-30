@@ -8,6 +8,6 @@ namespace ArchFinal
 {
     interface LocationIF
     {
-        int getPrice();
+        double getPrice();
     }
 }

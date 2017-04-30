@@ -74,11 +74,12 @@
       <DependentUpon>Editor.cs</DependentUpon>
     </Compile>
     <Compile Include="House.cs" />
-    <Compile Include="HouseIF.cs" />
     <Compile Include="HousePartsIF.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="LocationFactory.cs" />
     <Compile Include="LocationIF.cs" />
+    <Compile Include="ObservableIF.cs" />
+    <Compile Include="ObserverIF.cs" />
     <Compile Include="Oceanside.cs" />
     <Compile Include="Paint.cs" />
     <Compile Include="PaintAndWindow.cs" />

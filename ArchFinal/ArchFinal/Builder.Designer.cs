@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkButton = new System.Windows.Forms.Button();
             this.paintButton = new System.Windows.Forms.RadioButton();
@@ -68,13 +68,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(12, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 487);
-            this.panel1.TabIndex = 1;
+            this.panel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel.Location = new System.Drawing.Point(12, 51);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(367, 487);
+            this.panel.TabIndex = 1;
+            this.panel.Click += new System.EventHandler(this.panel_Click);
             // 
             // panel2
             // 
@@ -344,7 +345,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.button1);
             this.Name = "Builder";
             this.Text = "Form1";
@@ -359,7 +360,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

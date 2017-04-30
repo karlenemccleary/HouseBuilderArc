@@ -8,13 +8,13 @@ namespace ArchFinal
 {
     class Location : LocationIF
     {
-        int price;
+        double price;
 
         public Location(int price) {
             this.price = price;
         }
 
-        public int getPrice() {
+        public double getPrice() {
             return price;
         }
     }

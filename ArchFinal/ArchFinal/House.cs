@@ -6,28 +6,52 @@ using System.Threading.Tasks;
 
 namespace ArchFinal
 {
-    class House : HouseIF
+    class House : ObservableIF
     {
         private double price;
-        private HousePartsIF part;
+        private List<HousePartsIF> parts;
 
         public House()
         {
+            parts = new List<HousePartsIF>();
             price = 0;
         }
 
-        public void setPrice() {
+        public House(double price)
+        {
+            this.price = price;
+        }
+
+       // public void setPrice(HousePartsIF part) {
+            
+            //price += parts.getPrice();
+        //}
+
+        public virtual double getPrice()
+        {
+            return price;
+        }
+
+        public void addPart(HousePartsIF part)
+        {
+            parts.Add(part);
             price += part.getPrice();
         }
 
-        public void setPart(HousePartsIF part)
+        public void removePart(HousePartsIF part)
         {
-            this.part = part;
+            parts.Remove(part);
+            price -= part.getPrice();
         }
 
-        public double getPrice()
+        public void addObserver()
         {
-            return price;
+            
+        }
+
+        public void removeObserver()
+        {
+            
         }
     }
 }
