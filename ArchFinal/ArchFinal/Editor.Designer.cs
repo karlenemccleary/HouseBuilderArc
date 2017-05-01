@@ -44,12 +44,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -80,12 +82,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(228, 128);
+            this.button2.Location = new System.Drawing.Point(228, 166);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 24;
             this.button2.Text = "Update Price";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -95,6 +98,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "Update Price";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -154,7 +158,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(314, 100);
+            this.label14.Location = new System.Drawing.Point(314, 133);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 13);
             this.label14.TabIndex = 17;
@@ -163,7 +167,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(225, 100);
+            this.label11.Location = new System.Drawing.Point(221, 133);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 13);
             this.label11.TabIndex = 16;
@@ -172,7 +176,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(314, 77);
+            this.label13.Location = new System.Drawing.Point(314, 111);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(24, 13);
             this.label13.TabIndex = 15;
@@ -181,7 +185,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(225, 77);
+            this.label12.Location = new System.Drawing.Point(221, 111);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(93, 13);
             this.label12.TabIndex = 14;
@@ -212,6 +216,16 @@
             this.label5.Size = new System.Drawing.Size(233, 31);
             this.label5.TabIndex = 1;
             this.label5.Text = "Editor For Prices";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(228, 73);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(96, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Check";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Editor
             // 
@@ -248,5 +262,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button3;
     }
 }
