@@ -9,6 +9,11 @@ namespace ArchFinal
     class City : Location
     {
         public City() : base(20000) {
+            
+        }
+
+        public City(double price) : base(price)
+        {
 
         }
     }

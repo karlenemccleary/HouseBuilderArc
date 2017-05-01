@@ -11,5 +11,10 @@ namespace ArchFinal
         public Country() : base(50000) {
 
         }
+
+        public Country(double price) : base(price)
+        {
+
+        }
     }
 }

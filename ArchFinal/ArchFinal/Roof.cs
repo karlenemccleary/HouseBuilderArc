@@ -8,8 +8,41 @@ namespace ArchFinal
 {
     class Roof : AbsHouseParts
     {
-        public Roof() : base(2000)
+        private static Roof roof;
+        private Roof() : base(2000)
         {
+
+        }
+
+        private Roof(double price) : base(price)
+        {
+
+        }
+
+        public static Roof createInstance()
+        {
+            if (roof != null)
+            {
+                return roof;
+            }
+            else
+            {
+                roof = new Roof();
+                return roof;
+            }
+        }
+
+        public static Roof createInstance(double price)
+        {
+            if (roof != null)
+            {
+                return roof;
+            }
+            else
+            {
+                roof = new Roof(price);
+                return roof;
+            }
         }
     }
 }

@@ -15,6 +15,11 @@ namespace ArchFinal
             this.color = color;
         }
 
+        public Paint(Color color, double price) : base(price)
+        {
+            this.color = color;
+        }
+
         public Color PaintColor
         {
             set

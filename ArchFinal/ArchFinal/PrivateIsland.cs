@@ -11,5 +11,10 @@ namespace ArchFinal
         public PrivateIsland(): base(1000000) {
             
         }
+
+        public PrivateIsland(double price) : base(price)
+        {
+
+        }
     }
 }
