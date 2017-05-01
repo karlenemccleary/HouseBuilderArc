@@ -11,5 +11,10 @@ namespace ArchFinal
         public Desert() : base(5000) {
             
         }
+
+        public Desert(double price) : base(price)
+        {
+
+        }
     }
 }

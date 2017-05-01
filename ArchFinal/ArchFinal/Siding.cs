@@ -14,5 +14,10 @@ namespace ArchFinal
 
         }
 
+        public Siding(double price) : base(price)
+        {
+
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace ArchFinal
     {
         double price;
 
-        public Location(int price) {
+        public Location(double price) {
             this.price = price;
         }
 

@@ -11,5 +11,10 @@ namespace ArchFinal
         public Oceanside() : base(80000){
             
         }
+
+        public Oceanside(double price) : base(price)
+        {
+
+        }
     }
 }

@@ -11,5 +11,9 @@ namespace ArchFinal
         public Door() : base(300)
         {
         }
+
+        public Door(double price) : base(price)
+        {
+        }
     }
 }

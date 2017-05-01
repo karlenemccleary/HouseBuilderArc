@@ -11,5 +11,10 @@ namespace ArchFinal
         public Suburb() : base(30000) {
             
         }
+
+        public Suburb(double price) : base(price)
+        {
+
+        }
     }
 }

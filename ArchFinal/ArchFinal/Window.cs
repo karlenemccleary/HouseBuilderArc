@@ -8,8 +8,13 @@ namespace ArchFinal
 {
     class Window : PaintAndWindow
     {
-        public Window(double price) : base(400)
+        public Window() : base(400)
         {
+        }
+
+        public Window(double price) : base(price)
+        {
+
         }
     }
 }

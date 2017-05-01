@@ -11,5 +11,10 @@ namespace ArchFinal
         public Foundation() : base(7000)
         {
         }
+
+        public Foundation(double price) : base(price)
+        {
+
+        }
     }
 }
