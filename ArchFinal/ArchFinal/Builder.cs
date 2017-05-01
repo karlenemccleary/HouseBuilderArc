@@ -21,6 +21,9 @@ namespace ArchFinal
         public Bitmap bitmap2;
         public bool pressedFirst;
         Bitmap bmp;
+        int startX;
+        int startY;
+        Color c;
 
         public Builder()
         {
@@ -32,7 +35,7 @@ namespace ArchFinal
             bitmap2 = new Bitmap(panel.Width, panel.Height);
             //checks to make sure mouse is pressed for dragging
             pressedFirst = false;
-
+            c = Color.White;
             //stops flickering
             typeof(Panel).InvokeMember("DoubleBuffered",
                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
@@ -71,6 +74,7 @@ namespace ArchFinal
         private void button1_Click(object sender, EventArgs e)
         {
             house = new House();
+
         }
 
         private void panel_Click(object sender, EventArgs e)
@@ -82,57 +86,98 @@ namespace ArchFinal
             else if (roofButton.Checked)
             {
                 house.addPart(new Roof());
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri("P:\\Private\\Documents\\roof.png"));
-                gdParentGrid.Children.Add(img);
-                /*bmp = new Bitmap("P:\\Private\\Documents\\roof.png");
-                Point BmpLoc = new Point(100, 100);
-                Rectangle R = new Rectangle(BmpLoc, bmp.Size);
-                //this.Invalidate(R);
-                using (Graphics g = Graphics.FromImage(bmp))
-                {
-                    //Pen pen = new Pen(Color.Black);
-                    g.DrawImage(bmp, BmpLoc);
-                    //pen.Dispose();
-                }*/
             }
-            else if (paintButton.Checked)
-            {
-                //house.addPart(new Paint());
-            }
+
             else if (doorButton.Checked)
             {
                 house.addPart(new Door());
             }
             else if (windowButton.Checked)
             {
-                //house.addPart(new Window());
+                house.addPart(new Window());
             }
             else if (floorButton.Checked)
             {
                 house.addPart(new Floor());
+            }
+            else if (foundationButton.Checked)
+            {
+                house.addPart(new Foundation());
+                
             }
             label2.Text = house.getPrice().ToString();
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
         {
-            if (sidingButton.Checked)
-            {
-                Bitmap temp = new Bitmap(bitmap1);
-                //set ups graphics to draw
-                using (Graphics g = Graphics.FromImage(temp))
-                {
+            pressedFirst = true;
+            startX = e.X;
+            startY = e.Y;
+        }
 
-                }
+
+        private void drawCode(Image img, int finalX, int finalY)
+        {
+
+            //create temp to old info
+            Bitmap temp = new Bitmap(bitmap1);
+            //set ups graphics to draw
+            using (Graphics g = Graphics.FromImage(temp))
+            {
+
+                //had memory leak fixed it
+                g.DrawImage(img, Math.Min(startX, finalX), Math.Min(startY, finalY), Math.Abs(finalX - startX), Math.Abs(finalY- startY));
+
+
             }
+            //fixed memory leak
+            bitmap2.Dispose();
+            //set the second bitmap to temp
+            bitmap2 = new Bitmap(temp);
+            //make everything visible on screen
+            this.panel.BackgroundImage = this.bitmap2;
+            panel.BackgroundImageLayout = ImageLayout.None;
+            //know memory leaked parnoid
+            temp.Dispose();
         }
 
         private void panel_MouseMove(object sender, MouseEventArgs e)
         {
             if (pressedFirst)
             {
+                //set the x and y for second set
+                int finalX = e.X;
+                int finalY = e.Y;
+                if (sidingButton.Checked)
+                {
+                    house.addPart(new Siding());
+                }
+                else if (roofButton.Checked)
+                {
+                    //  house.addPart(new Foundation());
+                    Image img = Image.FromFile("roof.png");
+                    drawCode(img, finalX, finalY);
+                }
 
+                else if (doorButton.Checked)
+                {
+                    house.addPart(new Door());
+                }
+                else if (windowButton.Checked)
+                {
+                    house.addPart(new Window());
+                }
+                else if (floorButton.Checked)
+                {
+                    house.addPart(new Floor());
+                }
+                else if (foundationButton.Checked)
+                {
+                    //  house.addPart(new Foundation());
+                    Image img = Image.FromFile("foundation.png");
+                    drawCode(img, finalX, finalY);
+                }
+                label2.Text = house.getPrice().ToString();
             }
         }
 
@@ -142,6 +187,15 @@ namespace ArchFinal
             bitmap1 = new Bitmap(bitmap2);
             //no longer dragging mouse
             pressedFirst = false;
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                panel1.BackColor = colorDialog1.Color;
+                c = colorDialog1.Color;
+            }
         }
     }
 }

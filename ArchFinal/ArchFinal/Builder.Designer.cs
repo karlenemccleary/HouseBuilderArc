@@ -32,7 +32,6 @@
             this.panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkButton = new System.Windows.Forms.Button();
-            this.paintButton = new System.Windows.Forms.RadioButton();
             this.windowButton = new System.Windows.Forms.RadioButton();
             this.doorButton = new System.Windows.Forms.RadioButton();
             this.floorButton = new System.Windows.Forms.RadioButton();
@@ -55,13 +54,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 41);
             this.button1.TabIndex = 0;
@@ -73,7 +75,7 @@
             // 
             this.panel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel.Location = new System.Drawing.Point(16, 63);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(489, 599);
             this.panel.TabIndex = 1;
@@ -85,8 +87,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.checkButton);
-            this.panel2.Controls.Add(this.paintButton);
             this.panel2.Controls.Add(this.windowButton);
             this.panel2.Controls.Add(this.doorButton);
             this.panel2.Controls.Add(this.floorButton);
@@ -108,7 +111,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(513, 63);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 599);
             this.panel2.TabIndex = 0;
@@ -116,7 +119,7 @@
             // checkButton
             // 
             this.checkButton.Location = new System.Drawing.Point(23, 356);
-            this.checkButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkButton.Margin = new System.Windows.Forms.Padding(4);
             this.checkButton.Name = "checkButton";
             this.checkButton.Size = new System.Drawing.Size(100, 28);
             this.checkButton.TabIndex = 24;
@@ -124,23 +127,11 @@
             this.checkButton.UseVisualStyleBackColor = true;
             this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
             // 
-            // paintButton
-            // 
-            this.paintButton.AutoSize = true;
-            this.paintButton.Location = new System.Drawing.Point(23, 197);
-            this.paintButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.paintButton.Name = "paintButton";
-            this.paintButton.Size = new System.Drawing.Size(61, 21);
-            this.paintButton.TabIndex = 23;
-            this.paintButton.TabStop = true;
-            this.paintButton.Text = "Paint";
-            this.paintButton.UseVisualStyleBackColor = true;
-            // 
             // windowButton
             // 
             this.windowButton.AutoSize = true;
             this.windowButton.Location = new System.Drawing.Point(23, 169);
-            this.windowButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.windowButton.Margin = new System.Windows.Forms.Padding(4);
             this.windowButton.Name = "windowButton";
             this.windowButton.Size = new System.Drawing.Size(78, 21);
             this.windowButton.TabIndex = 22;
@@ -152,7 +143,7 @@
             // 
             this.doorButton.AutoSize = true;
             this.doorButton.Location = new System.Drawing.Point(23, 140);
-            this.doorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.doorButton.Margin = new System.Windows.Forms.Padding(4);
             this.doorButton.Name = "doorButton";
             this.doorButton.Size = new System.Drawing.Size(60, 21);
             this.doorButton.TabIndex = 21;
@@ -164,7 +155,7 @@
             // 
             this.floorButton.AutoSize = true;
             this.floorButton.Location = new System.Drawing.Point(23, 112);
-            this.floorButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.floorButton.Margin = new System.Windows.Forms.Padding(4);
             this.floorButton.Name = "floorButton";
             this.floorButton.Size = new System.Drawing.Size(61, 21);
             this.floorButton.TabIndex = 20;
@@ -176,7 +167,7 @@
             // 
             this.sidingButton.AutoSize = true;
             this.sidingButton.Location = new System.Drawing.Point(23, 84);
-            this.sidingButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sidingButton.Margin = new System.Windows.Forms.Padding(4);
             this.sidingButton.Name = "sidingButton";
             this.sidingButton.Size = new System.Drawing.Size(68, 21);
             this.sidingButton.TabIndex = 19;
@@ -188,7 +179,7 @@
             // 
             this.foundationButton.AutoSize = true;
             this.foundationButton.Location = new System.Drawing.Point(23, 55);
-            this.foundationButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foundationButton.Margin = new System.Windows.Forms.Padding(4);
             this.foundationButton.Name = "foundationButton";
             this.foundationButton.Size = new System.Drawing.Size(100, 21);
             this.foundationButton.TabIndex = 18;
@@ -200,7 +191,7 @@
             // 
             this.roofButton.AutoSize = true;
             this.roofButton.Location = new System.Drawing.Point(23, 27);
-            this.roofButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.roofButton.Margin = new System.Windows.Forms.Padding(4);
             this.roofButton.Name = "roofButton";
             this.roofButton.Size = new System.Drawing.Size(59, 21);
             this.roofButton.TabIndex = 17;
@@ -211,7 +202,7 @@
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(20, 464);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(153, 28);
             this.button9.TabIndex = 16;
@@ -262,7 +253,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(20, 322);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 22);
             this.textBox1.TabIndex = 11;
@@ -367,6 +358,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "test";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(32, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 17);
+            this.label15.TabIndex = 25;
+            this.label15.Text = "Paint";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Location = new System.Drawing.Point(23, 223);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(61, 34);
+            this.panel1.TabIndex = 26;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            // 
             // Builder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -377,7 +386,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Builder";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Builder_FormClosed);
@@ -414,9 +423,11 @@
         private System.Windows.Forms.RadioButton sidingButton;
         private System.Windows.Forms.RadioButton foundationButton;
         private System.Windows.Forms.RadioButton roofButton;
-        private System.Windows.Forms.RadioButton paintButton;
         private System.Windows.Forms.RadioButton windowButton;
         private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label15;
     }
 }
 
