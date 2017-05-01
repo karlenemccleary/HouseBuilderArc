@@ -20,6 +20,7 @@ namespace ArchFinal
         public Bitmap bitmap1;
         public Bitmap bitmap2;
         public bool pressedFirst;
+        Bitmap bmp;
 
         public Builder()
         {
@@ -60,6 +61,13 @@ namespace ArchFinal
 
         }
 
+        /*private void Builder_Load(object sender, EventArgs e)
+        {
+            PictureBox pb1 = new PictureBox();
+            pb1.ImageLocation = "roof.png";
+            pb1.SizeMode = PictureBoxSizeMode.AutoSize;
+        }*/
+
         private void button1_Click(object sender, EventArgs e)
         {
             house = new House();
@@ -74,6 +82,19 @@ namespace ArchFinal
             else if (roofButton.Checked)
             {
                 house.addPart(new Roof());
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri("P:\\Private\\Documents\\roof.png"));
+                gdParentGrid.Children.Add(img);
+                /*bmp = new Bitmap("P:\\Private\\Documents\\roof.png");
+                Point BmpLoc = new Point(100, 100);
+                Rectangle R = new Rectangle(BmpLoc, bmp.Size);
+                //this.Invalidate(R);
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    //Pen pen = new Pen(Color.Black);
+                    g.DrawImage(bmp, BmpLoc);
+                    //pen.Dispose();
+                }*/
             }
             else if (paintButton.Checked)
             {

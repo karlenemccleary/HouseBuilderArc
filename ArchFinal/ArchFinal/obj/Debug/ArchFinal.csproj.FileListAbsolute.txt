@@ -28,3 +28,14 @@ P:\Private\Architecture\ArchFinal\HouseBuilderArc\HouseBuilderArc\ArchFinal\Arch
 C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
 C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
 C:\Users\karle\Desktop\HouseBuilderArc\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe.config
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.exe
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.pdb
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csprojResolveAssemblyReference.cache
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Builder.resources
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Editor.resources
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Home.resources
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Properties.Resources.resources
+P:\Private\Architecture\ArchFinal\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csproj.GenerateResource.Cache
