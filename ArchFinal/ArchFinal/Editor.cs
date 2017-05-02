@@ -17,10 +17,12 @@ namespace ArchFinal
         House house;
         LocationIF loc;
         StreamWriter writer;
+        StreamReader reader;
         public Editor()
         {
             InitializeComponent();
             f = new LocationFactory();
+            loadPrices();
             /*writer = File.CreateText("roof_prices.txt");
             writer = File.CreateText("foundation_prices.txt");
             writer = File.CreateText("floor_prices.txt");
@@ -28,6 +30,18 @@ namespace ArchFinal
             writer = File.CreateText("door_prices.txt");
             writer = File.CreateText("window_prices.txt");
             writer = File.CreateText("paint_prices.txt");*/
+        }
+
+        public void loadPrices()
+        {
+            double price;
+            AbsHouseParts part;
+            reader = File.OpenText("roof_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Roof.createInstance(price);
+            //reader = File.OpenText("foundation_prices.txt");
+            //price = Convert.ToDouble(reader.ReadLine());
+            //part = Foundation.createInstance(price);
         }
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
