@@ -32,6 +32,7 @@ namespace ArchFinal
             InitializeComponent();
             f = new LocationFactory();
             loadPrices();
+            house = new House();
             //house = new House();
             //set the bitmap for drawing to panel size
             bitmap1 = new Bitmap(panel.Width, panel.Height);
@@ -80,16 +81,14 @@ namespace ArchFinal
 
         }
 
-        /*private void Builder_Load(object sender, EventArgs e)
-        {
-            PictureBox pb1 = new PictureBox();
-            pb1.ImageLocation = "roof.png";
-            pb1.SizeMode = PictureBoxSizeMode.AutoSize;
-        }*/
-
         private void button1_Click(object sender, EventArgs e)
         {
             house = new House();
+            bitmap1.Dispose();
+            bitmap1 = new Bitmap(panel.Width, panel.Height);
+            //make everything visible on screen
+            this.panel.BackgroundImage = this.bitmap1;
+            panel.BackgroundImageLayout = ImageLayout.None;
 
         }
 
@@ -132,7 +131,7 @@ namespace ArchFinal
         }
 
 
-        private void drawCode(Image img, int finalX, int finalY)
+        private void drawCode(Image img, int finalX, int finalY, bool rec)
         {
 
             //create temp to old info
@@ -143,7 +142,11 @@ namespace ArchFinal
 
                 //had memory leak fixed it
                 g.DrawImage(img, Math.Min(startX, finalX), Math.Min(startY, finalY), Math.Abs(finalX - startX), Math.Abs(finalY- startY));
-
+                if(rec)
+                {
+                    Brush brush = new SolidBrush(Color.FromArgb(200,c));
+                    g.FillRectangle(brush, Math.Min(startX, finalX), Math.Min(startY, finalY), Math.Abs(finalX - startX), Math.Abs(finalY - startY));
+                }
 
             }
             //fixed memory leak
@@ -166,32 +169,40 @@ namespace ArchFinal
                 int finalY = e.Y;
                 if (sidingButton.Checked)
                 {
-                    house.addPart(new Siding());
+                    //house.addPart(new Siding());
+                    Image img = Image.FromFile("siding.png");
+                    drawCode(img, finalX, finalY, true);
                 }
                 else if (roofButton.Checked)
                 {
                     //  house.addPart(new Foundation());
                     Image img = Image.FromFile("roof.png");
-                    drawCode(img, finalX, finalY);
+                    drawCode(img, finalX, finalY, false);
                 }
 
                 else if (doorButton.Checked)
                 {
-                    house.addPart(new Door());
+                    //  house.addPart(new Door());
+                    Image img = Image.FromFile("door.png");
+                    drawCode(img, finalX, finalY, true);
                 }
                 else if (windowButton.Checked)
                 {
-                    house.addPart(new Window());
+                    // house.addPart(new Window());
+                    Image img = Image.FromFile("window.png");
+                    drawCode(img, finalX, finalY, false);
                 }
                 else if (floorButton.Checked)
                 {
-                    house.addPart(new Floor());
+                    // house.addPart(new Floor());
+                    Image img = Image.FromFile("floor.png");
+                    drawCode(img, finalX, finalY, false);
                 }
                 else if (foundationButton.Checked)
                 {
                     //  house.addPart(new Foundation());
                     Image img = Image.FromFile("foundation.png");
-                    drawCode(img, finalX, finalY);
+                    drawCode(img, finalX, finalY, false);
                 }
                 label2.Text = house.getPrice().ToString();
             }
