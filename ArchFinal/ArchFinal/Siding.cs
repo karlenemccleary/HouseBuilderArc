@@ -8,7 +8,7 @@ namespace ArchFinal
 {
     class Siding : Composite
     {
-        
+        private static Siding siding;
         public Siding() : base(5000)
         {
 
@@ -17,6 +17,32 @@ namespace ArchFinal
         public Siding(double price) : base(price)
         {
 
+        }
+
+        public static Siding createInstance()
+        {
+            if (siding != null)
+            {
+                return siding;
+            }
+            else
+            {
+                siding = new Siding();
+                return siding;
+            }
+        }
+
+        public static Siding createInstance(double price)
+        {
+            if (siding != null)
+            {
+                return siding;
+            }
+            else
+            {
+                siding = new Siding(price);
+                return siding;
+            }
         }
 
     }

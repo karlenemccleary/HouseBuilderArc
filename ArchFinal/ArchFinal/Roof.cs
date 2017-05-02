@@ -32,7 +32,7 @@ namespace ArchFinal
             }
         }
 
-        public static Roof createInstance(double price)
+        public static Roof createInstance(double price) 
         {
             if (roof != null)
             {

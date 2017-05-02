@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,11 +25,13 @@ namespace ArchFinal
         int startX;
         int startY;
         Color c;
+        StreamReader reader;
 
         public Builder()
         {
             InitializeComponent();
             f = new LocationFactory();
+            loadPrices();
             //house = new House();
             //set the bitmap for drawing to panel size
             bitmap1 = new Bitmap(panel.Width, panel.Height);
@@ -40,6 +43,19 @@ namespace ArchFinal
             typeof(Panel).InvokeMember("DoubleBuffered",
                BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
                null, panel, new object[] { true });
+        }
+
+        public void loadPrices()
+        {
+            double price;
+            AbsHouseParts part;
+            reader = File.OpenText("roof_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Roof.createInstance(price);
+            label16.Text = price.ToString();
+            //reader = File.OpenText("foundation_prices.txt");
+            //price = Convert.ToDouble(reader.ReadLine());
+            //part = Foundation.createInstance(price);
         }
 
         private void Builder_FormClosed(object sender, FormClosedEventArgs e)
@@ -81,28 +97,28 @@ namespace ArchFinal
         {
             if (sidingButton.Checked)
             {
-                house.addPart(new Siding());
+                house.addPart(Siding.createInstance());
             }
             else if (roofButton.Checked)
             {
-                house.addPart(new Roof());
+                house.addPart(Roof.createInstance());
             }
 
             else if (doorButton.Checked)
             {
-                house.addPart(new Door());
+                house.addPart(Door.createInstance());
             }
             else if (windowButton.Checked)
             {
-                house.addPart(new Window());
+                house.addPart(Window.createInstance());
             }
             else if (floorButton.Checked)
             {
-                house.addPart(new Floor());
+                house.addPart(Floor.createInstance());
             }
             else if (foundationButton.Checked)
             {
-                house.addPart(new Foundation());
+                house.addPart(Foundation.createInstance());
                 
             }
             label2.Text = house.getPrice().ToString();

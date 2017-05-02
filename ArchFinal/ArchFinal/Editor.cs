@@ -21,18 +21,17 @@ namespace ArchFinal
         {
             InitializeComponent();
             f = new LocationFactory();
-            writer = File.CreateText("roof_prices.txt");
+            /*writer = File.CreateText("roof_prices.txt");
             writer = File.CreateText("foundation_prices.txt");
             writer = File.CreateText("floor_prices.txt");
             writer = File.CreateText("siding_prices.txt");
             writer = File.CreateText("door_prices.txt");
             writer = File.CreateText("window_prices.txt");
-            writer = File.CreateText("paint_prices.txt");
+            writer = File.CreateText("paint_prices.txt");*/
         }
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            writer.Close();
             Application.Exit();
         }
 
@@ -47,23 +46,23 @@ namespace ArchFinal
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 1:
-                    part = new Foundation();
+                    part = Foundation.createInstance();
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 2:
-                    part = new Siding();
+                    part = Siding.createInstance();
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 3:
-                    part = new Floor();
+                    part = Floor.createInstance();
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 4:
-                    part = new Door();
+                    part = Door.createInstance();
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 5:
-                    part = new Window();
+                    part = Window.createInstance();
                     label4.Text = part.getPrice().ToString();
                     break;
                 case 6:
@@ -76,8 +75,38 @@ namespace ArchFinal
         private void button2_Click(object sender, EventArgs e)
         {
             double price = showDialog("Enter new price:", "Update Prices");
-            writer.WriteLine(label13.Text + " " + price);
+            if(textBox1.Text == "Oceanside")
+            {
+                writer = File.CreateText("oceanside.txt");
+                writer.WriteLine(price);
+            }
+            if (textBox1.Text == "Country")
+            {
+                writer = File.CreateText("country.txt");
+                writer.WriteLine(price);
+            }
+            if (textBox1.Text == "City")
+            {
+                writer = File.CreateText("city.txt");
+                writer.WriteLine(price);
+            }
+            if (textBox1.Text == "Private Island")
+            {
+                writer = File.CreateText("private_island.txt");
+                writer.WriteLine(price);
+            }
+            if (textBox1.Text == "Desert")
+            {
+                writer = File.CreateText("desert.txt");
+                writer.WriteLine(price);
+            }
+            if (textBox1.Text == "Suburb")
+            {
+                writer = File.CreateText("suburb.txt");
+                writer.WriteLine(price);
+            }
             label14.Text = price.ToString();
+            writer.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -92,35 +121,49 @@ namespace ArchFinal
         {
             double price = showDialog("Enter new price:", "Update Prices");
             
-            writer.WriteLine(listBox1.Text + " " + price);
+           // writer.WriteLine(listBox1.Text + " " + price);
             label4.Text = price.ToString();
-            /*switch (listBox1.SelectedIndex)
+            switch (listBox1.SelectedIndex)
             {
                 case 0:
                     //AbsHouseParts part = new Roof(price);
-                    writer.WriteLine(listBox1.Text + " " + price);
+                    writer = File.CreateText("roof_prices.txt");
+                    writer.WriteLine(price);
                     break;
                 case 1:
+                    writer = File.CreateText("foundation_prices.txt");
+                    writer.WriteLine(price);
                     //part = new Siding(price);
                     break;
                 case 2:
+                    writer = File.CreateText("siding_prices.txt");
+                    writer.WriteLine(price);
                     //part = new Foundation(price);
                     break;
                 case 3:
+                    writer = File.CreateText("floor_prices.txt");
+                    writer.WriteLine(price);
                     //part = new Window(price);
                     break;
                 case 4:
+                    writer = File.CreateText("door_prices.txt");
+                    writer.WriteLine(price);
                     //part = new Floor(price);
                     break;
                 case 5:
+                    writer = File.CreateText("window_prices.txt");
+                    writer.WriteLine(price);
                     //part = new Door(price);
                     break;
                 case 6:
+                    //writer = File.CreateText("paint_prices.txt");
+                   // writer.WriteLine(price);
                     //part = new Paint(price);
                     break;
                 default:
                     break;
-            }*/
+            }
+            writer.Close();
         }
 
     public static double showDialog(string text, string title)
