@@ -23,13 +23,6 @@ namespace ArchFinal
             InitializeComponent();
             f = new LocationFactory();
             loadPrices();
-            /*writer = File.CreateText("roof_prices.txt");
-            writer = File.CreateText("foundation_prices.txt");
-            writer = File.CreateText("floor_prices.txt");
-            writer = File.CreateText("siding_prices.txt");
-            writer = File.CreateText("door_prices.txt");
-            writer = File.CreateText("window_prices.txt");
-            writer = File.CreateText("paint_prices.txt");*/
         }
 
         public void loadPrices()
@@ -39,9 +32,39 @@ namespace ArchFinal
             reader = File.OpenText("roof_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Roof.createInstance(price);
-            //reader = File.OpenText("foundation_prices.txt");
-            //price = Convert.ToDouble(reader.ReadLine());
-            //part = Foundation.createInstance(price);
+            reader = File.OpenText("foundation_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Foundation.createInstance(price);
+            reader = File.OpenText("siding_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Siding.createInstance(price);
+            reader = File.OpenText("door_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Door.createInstance(price);
+            reader = File.OpenText("window_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = Window.createInstance(price);
+            //reader = File.OpenText("paint_prices.txt");
+            // price = Convert.ToDouble(reader.ReadLine());
+            //part = Paint.createInstance(price);
+            reader = File.OpenText("oceanside.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = Oceanside.createInstance(price);
+            reader = File.OpenText("city.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = City.createInstance(price);
+            reader = File.OpenText("desert.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = Desert.createInstance(price);
+            reader = File.OpenText("private_island.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = PrivateIsland.createInstance(price);
+            reader = File.OpenText("country.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = Country.createInstance(price);
+            reader = File.OpenText("suburb.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            loc = Suburb.createInstance(price);
         }
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)

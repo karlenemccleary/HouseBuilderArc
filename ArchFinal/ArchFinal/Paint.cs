@@ -9,6 +9,7 @@ namespace ArchFinal
 {
     class Paint : PaintAndWindow
     {
+        private static Paint paint;
         Color color;
         public Paint(Color color) : base(30)
         {
@@ -29,6 +30,32 @@ namespace ArchFinal
             get
             {
                 return color;
+            }
+        }
+
+        public static Paint createInstance()
+        {
+            if (paint != null)
+            {
+                return paint;
+            }
+            else
+            {
+                paint = new Paint(Color.Blue);
+                return paint;
+            }
+        }
+
+        public static Paint createInstance(Color color, double price)
+        {
+            if (paint != null)
+            {
+                return paint;
+            }
+            else
+            {
+                paint = new Paint(Color.Blue, price);
+                return paint;
             }
         }
     }
