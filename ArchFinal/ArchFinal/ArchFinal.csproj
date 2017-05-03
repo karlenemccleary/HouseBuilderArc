@@ -81,11 +81,12 @@
     <Compile Include="ObservableIF.cs" />
     <Compile Include="ObserverIF.cs" />
     <Compile Include="Oceanside.cs" />
-    <Compile Include="Paint.cs" />
+    <Compile Include="PaintHASS.cs" />
     <Compile Include="PaintAndWindow.cs" />
     <Compile Include="PrivateIsland.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadWriteLock.cs" />
     <Compile Include="Roof.cs" />
     <Compile Include="Siding.cs" />
     <Compile Include="Suburb.cs" />
@@ -123,10 +124,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="door.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="floor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="foundation.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="roof.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="siding.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="window.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

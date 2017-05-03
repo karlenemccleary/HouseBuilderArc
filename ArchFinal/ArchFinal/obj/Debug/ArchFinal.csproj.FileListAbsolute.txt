@@ -44,7 +44,6 @@ C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.e
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.pdb
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.exe
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\ArchFinal.pdb
-C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csprojResolveAssemblyReference.cache
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Builder.resources
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Editor.resources
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.Home.resources
@@ -52,3 +51,8 @@ C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.P
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csproj.GenerateResource.Cache
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\foundation.png
 C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\roof.png
+C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\siding.png
+C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\door.png
+C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\floor.png
+C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\bin\Debug\window.png
+C:\Users\karle\Desktop\HouseBuilderArc\ArchFinal\ArchFinal\obj\Debug\ArchFinal.csprojResolveAssemblyReference.cache

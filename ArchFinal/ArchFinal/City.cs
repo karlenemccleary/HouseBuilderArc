@@ -10,7 +10,7 @@ namespace ArchFinal
     {
         private static City city;
         public City() : base(20000) {
-            
+    
         }
 
         public City(double price) : base(price)
@@ -20,15 +20,15 @@ namespace ArchFinal
 
         public static City createInstance()
         {
-            if (city != null)
-            {
+          //  if (city != null)
+        //    {
                 return city;
-            }
-            else
-            {
-                city = new City();
-                return city;
-            }
+        //    }
+        //    else
+        //    {
+        //        city = new City();
+       //         return city;
+        //    }
         }
 
         public static City createInstance(double price)

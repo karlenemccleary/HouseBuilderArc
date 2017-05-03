@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace ArchFinal
 {
-    class Paint : PaintAndWindow
+    class PaintHASS : PaintAndWindow
     {
-        private static Paint paint;
+        private static PaintHASS paint;
         Color color;
-        public Paint(Color color) : base(30)
+        public PaintHASS(Color color) : base(30)
         {
             this.color = color;
         }
 
-        public Paint(Color color, double price) : base(price)
+        public PaintHASS(Color color, double price) : base(price)
         {
             this.color = color;
         }
@@ -33,7 +33,7 @@ namespace ArchFinal
             }
         }
 
-        public static Paint createInstance()
+        public static PaintHASS createInstance()
         {
             if (paint != null)
             {
@@ -41,12 +41,12 @@ namespace ArchFinal
             }
             else
             {
-                paint = new Paint(Color.Blue);
+                paint = new PaintHASS(Color.Blue);
                 return paint;
             }
         }
 
-        public static Paint createInstance(Color color, double price)
+        public static PaintHASS createInstance(Color color, double price)
         {
             if (paint != null)
             {
@@ -54,7 +54,7 @@ namespace ArchFinal
             }
             else
             {
-                paint = new Paint(Color.Blue, price);
+                paint = new PaintHASS(Color.Blue, price);
                 return paint;
             }
         }

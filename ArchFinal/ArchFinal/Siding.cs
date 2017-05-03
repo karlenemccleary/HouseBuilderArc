@@ -9,6 +9,7 @@ namespace ArchFinal
     class Siding : Composite
     {
         private static Siding siding;
+        private static PaintAndWindow pw;
         public Siding() : base(5000)
         {
 

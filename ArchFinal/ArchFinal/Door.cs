@@ -19,15 +19,15 @@ namespace ArchFinal
 
         public static Door createInstance()
         {
-            if (door != null)
-            {
+           // if (door != null)
+         //   {
                 return door;
-            }
-            else
-            {
-                door = new Door();
-                return door;
-            }
+          //  }
+          //  else
+         //   {
+            //    door = new Door();
+           //     return door;
+          //  }
         }
 
         public static Door createInstance(double price)

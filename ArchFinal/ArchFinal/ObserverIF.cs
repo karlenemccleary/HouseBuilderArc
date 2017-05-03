@@ -8,6 +8,6 @@ namespace ArchFinal
 {
     interface ObserverIF
     {
-        double notify();
+        void notify();
     }
 }

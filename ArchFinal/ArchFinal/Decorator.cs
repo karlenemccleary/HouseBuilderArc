@@ -8,7 +8,7 @@ namespace ArchFinal
 {
     class Decorator : House
     {
-        House house;
+        public House house;
         LocationIF location;
         public Decorator(House h, LocationIF l) : base(h.getPrice() + l.getPrice()) {
             house = h;

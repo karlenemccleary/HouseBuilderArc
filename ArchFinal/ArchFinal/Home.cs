@@ -29,6 +29,7 @@ namespace ArchFinal
             frm.Activate();
             builder = new Thread(new ThreadStart(frm.loadPrices));
             this.Hide();
+            builder.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace ArchFinal
             frm.Activate();
             editor = new Thread(new ThreadStart(frm.loadPrices));
             this.Hide();
+            editor.Start();
         }
 
         private void Home_Load(object sender, EventArgs e)

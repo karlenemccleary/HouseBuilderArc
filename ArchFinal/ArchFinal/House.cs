@@ -32,10 +32,10 @@ namespace ArchFinal
             return price;
         }
 
-        public void addPart(HousePartsIF part)
+        public void addPart(HousePartsIF part, double mult)
         {
             parts.Add(part);
-            price += part.getPrice();
+            price += part.getPrice() * mult;
         }
 
         public void removePart(HousePartsIF part)
@@ -44,14 +44,14 @@ namespace ArchFinal
             price -= part.getPrice();
         }
 
-        public void addObserver()
+        public void removeObserver()
         {
             
         }
 
-        public void removeObserver()
+        public void addObserver(Builder b)
         {
-            
+            b.notify();
         }
     }
 }

@@ -18,53 +18,66 @@ namespace ArchFinal
         LocationIF loc;
         StreamWriter writer;
         StreamReader reader;
+        AbsHouseParts part;
         public Editor()
         {
             InitializeComponent();
             f = new LocationFactory();
-            loadPrices();
+           // loadPrices();
         }
 
         public void loadPrices()
         {
             double price;
-            AbsHouseParts part;
+            
             reader = File.OpenText("roof_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Roof.createInstance(price);
+            reader.Close();
             reader = File.OpenText("foundation_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Foundation.createInstance(price);
+            reader.Close();
             reader = File.OpenText("siding_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Siding.createInstance(price);
+            reader.Close();
             reader = File.OpenText("door_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Door.createInstance(price);
+            reader.Close();
             reader = File.OpenText("window_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Window.createInstance(price);
-            //reader = File.OpenText("paint_prices.txt");
-            // price = Convert.ToDouble(reader.ReadLine());
-            //part = Paint.createInstance(price);
+            reader.Close();
+            reader = File.OpenText("paint_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = PaintHASS.createInstance(Color.White, price);
+            reader.Close();
             reader = File.OpenText("oceanside.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = Oceanside.createInstance(price);
+            reader.Close();
             reader = File.OpenText("city.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = City.createInstance(price);
+            reader.Close();
             reader = File.OpenText("desert.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = Desert.createInstance(price);
+            reader.Close();
             reader = File.OpenText("private_island.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = PrivateIsland.createInstance(price);
+            reader.Close();
             reader = File.OpenText("country.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = Country.createInstance(price);
+            reader.Close();
             reader = File.OpenText("suburb.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = Suburb.createInstance(price);
+            reader.Close();
         }
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
@@ -149,7 +162,41 @@ namespace ArchFinal
         private void button3_Click(object sender, EventArgs e)
         {
             string text = textBox1.Text;
-            loc = f.getLocation(text);
+            if (textBox1.Text == "Oceanside")
+            {
+                loc = Oceanside.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Country")
+            {
+                loc = Country.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "City")
+            {
+                loc = City.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Private Island")
+            {
+                loc = PrivateIsland.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Desert")
+            {
+                loc = Desert.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Suburb")
+            {
+                loc = Suburb.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else
+            {
+                loc = f.getLocation(text, 0);
+            }
+            //loc = f.getLocation(text, .getPrice());
             label13.Text = text;
             label14.Text = loc.getPrice().ToString();
         }

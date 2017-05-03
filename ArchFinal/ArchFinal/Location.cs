@@ -14,6 +14,11 @@ namespace ArchFinal
             this.price = price;
         }
 
+        public Location()
+        {
+            
+        }
+
         public double getPrice() {
             return price;
         }

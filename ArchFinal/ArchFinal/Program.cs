@@ -16,7 +16,7 @@ namespace ArchFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Builder());
+            Application.Run(new Home());
         }
     }
 }

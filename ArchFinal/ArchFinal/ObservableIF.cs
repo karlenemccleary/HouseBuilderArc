@@ -8,7 +8,7 @@ namespace ArchFinal
 {
     interface ObservableIF
     {
-        void addObserver();
+        void addObserver(Builder b);
         void removeObserver();
     }
 }

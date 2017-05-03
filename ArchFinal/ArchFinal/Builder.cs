@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ArchFinal
 {
-    public partial class Builder : Form
+    public partial class Builder : Form, ObserverIF
     {
        
         LocationFactory f;
@@ -26,6 +26,8 @@ namespace ArchFinal
         int startY;
         Color c;
         StreamReader reader;
+        AbsHouseParts part;
+        double mult;
 
         public Builder()
         {
@@ -49,11 +51,11 @@ namespace ArchFinal
         public void loadPrices()
         {
             double price;
-            AbsHouseParts part;
+            
             reader = File.OpenText("roof_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Roof.createInstance(price);
-            roofLabel.Text = price.ToString();
+            roofLabel.Text = part.getPrice().ToString();
             reader = File.OpenText("foundation_prices.txt");
             price = Convert.ToDouble(reader.ReadLine());
             part = Foundation.createInstance(price);
@@ -74,10 +76,10 @@ namespace ArchFinal
             price = Convert.ToDouble(reader.ReadLine());
             part = Floor.createInstance(price);
             floorLabel.Text = price.ToString();
-            //reader = File.OpenText("paint_prices.txt");
-            // price = Convert.ToDouble(reader.ReadLine());
-            //part = Paint.createInstance(price);
-            //label8.Text = price.ToString();
+            reader = File.OpenText("paint_prices.txt");
+            price = Convert.ToDouble(reader.ReadLine());
+            part = PaintHASS.createInstance(c, price);
+            label8.Text = price.ToString();
             reader = File.OpenText("oceanside.txt");
             price = Convert.ToDouble(reader.ReadLine());
             loc = Oceanside.createInstance(price);
@@ -108,16 +110,51 @@ namespace ArchFinal
         private void checkButton_Click(object sender, EventArgs e)
         {
             string text = textBox1.Text;
-            loc = f.getLocation(text);
+            if (textBox1.Text == "Oceanside")
+            {
+                loc = Oceanside.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Country")
+            {
+                loc = Country.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "City")
+            {
+                loc = City.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "PrivateIsland")
+            {
+                loc = PrivateIsland.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Desert")
+            {
+                loc = Desert.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else if (textBox1.Text == "Suburb")
+            {
+                loc = Suburb.createInstance();
+                loc = f.getLocation(text, loc.getPrice());
+            }
+            else
+            {
+                loc = f.getLocation(text, 0);
+            }
             label13.Text = text;
             label14.Text = loc.getPrice().ToString();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            House hold = house;
             house = new Decorator(house, loc);
+         
             label2.Text = house.getPrice().ToString();
-
+            house = hold;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -133,33 +170,7 @@ namespace ArchFinal
 
         private void panel_Click(object sender, EventArgs e)
         {
-            if (sidingButton.Checked)
-            {
-                house.addPart(Siding.createInstance());
-            }
-            else if (roofButton.Checked)
-            {
-                house.addPart(Roof.createInstance());
-            }
-
-            else if (doorButton.Checked)
-            {
-                house.addPart(Door.createInstance());
-            }
-            else if (windowButton.Checked)
-            {
-                house.addPart(Window.createInstance());
-            }
-            else if (floorButton.Checked)
-            {
-                house.addPart(Floor.createInstance());
-            }
-            else if (foundationButton.Checked)
-            {
-                house.addPart(Foundation.createInstance());
-                
-            }
-            label2.Text = house.getPrice().ToString();
+            
         }
 
         private void panel_MouseDown(object sender, MouseEventArgs e)
@@ -206,6 +217,23 @@ namespace ArchFinal
                 //set the x and y for second set
                 int finalX = e.X;
                 int finalY = e.Y;
+
+                int originX = Math.Min(startX, finalX);
+                int originY = Math.Min(startY, finalY);
+                int lastX = Math.Abs(finalX - startX);
+                int lastY = Math.Abs(finalY - startY);
+
+                int lengthX = lastX;
+                int lengthY = lastY;
+
+                double multX = lengthX / 100.0;
+                double multY = lengthY / 100.0;
+
+
+                mult = multX * multY;
+                 
+
+
                 if (sidingButton.Checked)
                 {
                     //house.addPart(new Siding());
@@ -243,12 +271,40 @@ namespace ArchFinal
                     Image img = Image.FromFile("foundation.png");
                     drawCode(img, finalX, finalY, false);
                 }
-                label2.Text = house.getPrice().ToString();
+                //label2.Text = house.getPrice().ToString();
             }
         }
 
         private void panel_MouseUp(object sender, MouseEventArgs e)
         {
+            if (sidingButton.Checked)
+            {
+                house.addPart(Siding.createInstance(), mult);
+            }
+            else if (roofButton.Checked)
+            {
+                house.addPart(Roof.createInstance(), mult);
+            }
+
+            else if (doorButton.Checked)
+            {
+                house.addPart(Door.createInstance(), mult);
+            }
+            else if (windowButton.Checked)
+            {
+                house.addPart(Window.createInstance(), mult);
+            }
+            else if (floorButton.Checked)
+            {
+                house.addPart(Floor.createInstance(), mult);
+            }
+            else if (foundationButton.Checked)
+            {
+                house.addPart(Foundation.createInstance(), mult);
+
+            }
+            house.addObserver(this);
+            //label2.Text = house.getPrice().ToString();
             //copy the second bitmap back to original
             bitmap1 = new Bitmap(bitmap2);
             //no longer dragging mouse
@@ -262,6 +318,12 @@ namespace ArchFinal
                 panel1.BackColor = colorDialog1.Color;
                 c = colorDialog1.Color;
             }
+        }
+
+        public void notify()
+        {
+            double d = house.getPrice();
+            label2.Text = d.ToString("#.00");
         }
     }
 }
